@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0712" />
+  <title>VELORA — Photo & Video Marketplace</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="logo">V</div>
+        <div>
+          <div class="brand">VELORA</div>
+          <div class="tagline">Photo & Video Marketplace</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+    </header>
+
+    <main id="mainContent">
+      <section class="hero card-glow">
+        <div class="eyebrow">DISCOVER • CREATE • SELL</div>
+        <h1>Premium visuals.<br><span>Made for creators.</span></h1>
+        <p>Browse curated photos and videos, follow creators, or publish your own work.</p>
+        <div class="hero-actions">
+          <button class="btn primary" data-nav="explore">Explore</button>
+          <button class="btn ghost" data-nav="upload">Start Selling</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>Trending</h2><button class="text-btn" data-nav="explore">See all</button></div>
+        <div class="media-grid" id="trendingGrid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>Top Creators</h2><span class="muted">This week</span></div>
+        <div class="creator-row" id="creatorRow"></div>
+      </section>
+
+      <section class="section safety-card">
+        <div class="shield">✓</div>
+        <div><h3>Safe marketplace</h3><p>Only upload content you own or have permission to sell. Respect privacy, copyright, and community rules.</p></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-nav="home"><span>⌂</span><small>Home</small></button>
+      <button class="nav-item" data-nav="explore"><span>◫</span><small>Explore</small></button>
+      <button class="nav-item upload-nav" data-nav="upload"><span>＋</span><small>Upload</small></button>
+      <button class="nav-item" data-nav="purchases"><span>▣</span><small>Purchases</small></button>
+      <button class="nav-item" data-nav="profile"><span>◎</span><small>Profile</small></button>
+    </nav>
+  </div>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-card" id="modalCard"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
