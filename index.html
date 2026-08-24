@@ -8,6 +8,7 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="ui-v2.css" />
 </head>
 <body>
   <div class="app-shell">
@@ -34,6 +35,16 @@
       </section>
 
       <section class="section">
+        <div class="category-strip">
+          <button class="category-chip active" data-nav="explore">For You</button>
+          <button class="category-chip" data-nav="explore">Photos</button>
+          <button class="category-chip" data-nav="explore">Videos</button>
+          <button class="category-chip" data-nav="explore">Travel</button>
+          <button class="category-chip" data-nav="explore">Lifestyle</button>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="section-head"><h2>Trending</h2><button class="text-btn" data-nav="explore">See all</button></div>
         <div class="media-grid" id="trendingGrid"></div>
       </section>
@@ -50,28 +61,14 @@
     </main>
 
     <nav class="bottom-nav" aria-label="Main navigation">
-      <button class="nav-item active" data-nav="home" aria-label="Home">
-        <span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5v8a1.5 1.5 0 0 1-1.5 1.5H15v-6H9v6H4.5A1.5 1.5 0 0 1 3 19.5z"/></svg></span><small>Home</small>
-      </button>
-      <button class="nav-item" data-nav="explore" aria-label="Explore">
-        <span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m14.8 9.2-2 4.1-4.1 2 2-4.1z"/></svg></span><small>Explore</small>
-      </button>
-      <button class="nav-item upload-nav" data-nav="upload" aria-label="Upload">
-        <span class="nav-icon upload-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><small>Upload</small>
-      </button>
-      <button class="nav-item" data-nav="purchases" aria-label="Purchases">
-        <span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1 13H6z"/><path d="M9 7V5.5A3 3 0 0 1 12 2.5a3 3 0 0 1 3 3V7"/></svg></span><small>Purchases</small>
-      </button>
-      <button class="nav-item" data-nav="profile" aria-label="Profile">
-        <span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 20c.8-4 3.1-6 6.5-6s5.7 2 6.5 6"/></svg></span><small>Profile</small>
-      </button>
+      <button class="nav-item active" data-nav="home" aria-label="Home"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5v8a1.5 1.5 0 0 1-1.5 1.5H15v-6H9v6H4.5A1.5 1.5 0 0 1 3 19.5z"/></svg></span><small>Home</small></button>
+      <button class="nav-item" data-nav="explore" aria-label="Explore"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m14.8 9.2-2 4.1-4.1 2 2-4.1z"/></svg></span><small>Explore</small></button>
+      <button class="nav-item upload-nav" data-nav="upload" aria-label="Upload"><span class="nav-icon upload-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><small>Upload</small></button>
+      <button class="nav-item" data-nav="purchases" aria-label="Purchases"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1 13H6z"/><path d="M9 7V5.5A3 3 0 0 1 12 2.5a3 3 0 0 1 3 3V7"/></svg></span><small>Purchases</small></button>
+      <button class="nav-item" data-nav="profile" aria-label="Profile"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 20c.8-4 3.1-6 6.5-6s5.7 2 6.5 6"/></svg></span><small>Profile</small></button>
     </nav>
   </div>
-
-  <div class="modal hidden" id="modal">
-    <div class="modal-card" id="modalCard"></div>
-  </div>
-
+  <div class="modal hidden" id="modal"><div class="modal-card" id="modalCard"></div></div>
   <script src="app.js"></script>
 </body>
 </html>
