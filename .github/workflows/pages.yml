@@ -1,4 +1,4 @@
-name: Deploy VELORA Demo to GitHub Pages
+name: Deploy VELORA to GitHub Pages
 
 on:
   push:
