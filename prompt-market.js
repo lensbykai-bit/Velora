@@ -35,4 +35,5 @@ $('#searchBtn').onclick=openSearch;$('#notifyBtn').onclick=()=>{sheetCard.innerH
 $('#menuBtn').onclick=()=>{sheetCard.innerHTML=`<h2>VELORA</h2><button class="menu-row" onclick="closeSheet();route('explore')">Explore Marketplace <b>›</b></button><button class="menu-row" onclick="closeSheet();route('sell')">Upload & Sell <b>›</b></button><button class="menu-row" onclick="closeSheet();route('favorites')">Favorites <b>›</b></button><button class="menu-row" onclick="closeSheet();route('profile')">Profile <b>›</b></button><button class="btn ghost" style="width:100%;margin-top:14px" onclick="closeSheet()">Close</button>`;sheet.classList.remove('hidden')};
 $$('[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
 $$('#categoryStrip [data-category]').forEach(b=>b.onclick=()=>renderExplore(b.dataset.category));
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
 fillHome();
