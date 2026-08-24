@@ -9,59 +9,85 @@
   <link rel="icon" href="icon.svg" />
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="prompt-market.css" />
+  <link rel="stylesheet" href="website-layout.css" />
 </head>
 <body>
-  <div class="site-shell">
-    <header class="topbar">
-      <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
-      <a class="brand" href="#home">VELORA</a>
-      <div class="top-actions">
-        <button class="icon-btn notif-btn" id="notifyBtn" aria-label="Notifications">♧<span>3</span></button>
+  <div class="website-shell">
+    <header class="website-header">
+      <div class="website-header-inner">
+        <a class="brand" href="#home" data-route="home">VELORA</a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <button class="web-nav active" data-route="home">Home</button>
+          <button class="web-nav" data-route="explore">Explore</button>
+          <button class="web-nav" data-route="favorites">Favorites</button>
+          <button class="web-nav" data-route="sell">Sell</button>
+          <button class="web-nav" data-route="profile">Profile</button>
+        </nav>
+        <div class="header-tools">
+          <button class="header-search" id="searchBtn">⌕ <span>Search</span></button>
+          <button class="icon-btn notif-btn" id="notifyBtn" aria-label="Notifications">♧<span>3</span></button>
+          <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Menu">☰</button>
+        </div>
       </div>
     </header>
 
-    <main id="app">
+    <main id="app" class="website-main">
       <section class="page home-page" id="homePage">
-        <button class="search-box" id="searchBtn"><b>⌕</b><span>Search prompts, styles, creators...</span></button>
-
-        <div class="category-strip" id="categoryStrip">
-          <button class="category active" data-category="ALL"><i>✿</i><span>All</span></button>
-          <button class="category" data-category="Photography"><i>▣</i><span>Photography</span></button>
-          <button class="category" data-category="Illustration"><i>✎</i><span>Illustration</span></button>
-          <button class="category" data-category="3D / Render"><i>◇</i><span>3D / Render</span></button>
-          <button class="category" data-category="Anime"><i>☆</i><span>Anime</span></button>
-          <button class="category" data-category="UI / UX"><i>▤</i><span>UI / UX</span></button>
-        </div>
-
-        <section class="sell-banner">
-          <div>
-            <h1>Create More, Earn More</h1>
-            <p>Sell your images together with high-quality prompts to creators worldwide.</p>
-            <button class="white-btn" data-route="sell">Upload & Sell</button>
+        <section class="website-hero">
+          <div class="hero-copy">
+            <div class="eyebrow">IMAGE + PROMPT MARKETPLACE</div>
+            <h1>Discover images.<br><span>Unlock the prompts behind them.</span></h1>
+            <p>Browse premium creative images, buy the exact prompts used to create them, or publish your own work for sale.</p>
+            <div class="hero-actions">
+              <button class="hero-primary" data-route="explore">Explore Marketplace</button>
+              <button class="hero-secondary" data-route="sell">Start Selling</button>
+            </div>
+            <div class="hero-stats"><div><strong>1.8K+</strong><span>Creators</span></div><div><strong>12K+</strong><span>Prompts</span></div><div><strong>24/7</strong><span>Marketplace</span></div></div>
           </div>
-          <div class="cube-art">◇</div>
+          <div class="hero-showcase">
+            <div class="showcase-card large"><span>Photography</span><strong>Mountain Lake Reflection</strong><small>$2.50</small></div>
+            <div class="showcase-grid"><div class="showcase-card"><span>Anime</span><strong>Anime Portrait</strong></div><div class="showcase-card"><span>3D / Render</span><strong>Cyber City</strong></div></div>
+          </div>
         </section>
 
-        <section class="content-section">
-          <div class="section-head"><h2>Popular Prompts</h2><button data-route="explore">See All ›</button></div>
+        <section class="browse-panel">
+          <button class="search-box" onclick="document.getElementById('searchBtn').click()"><b>⌕</b><span>Search prompts, styles, creators...</span></button>
+          <div class="category-strip" id="categoryStrip">
+            <button class="category active" data-category="ALL"><i>✿</i><span>All</span></button>
+            <button class="category" data-category="Photography"><i>▣</i><span>Photography</span></button>
+            <button class="category" data-category="Illustration"><i>✎</i><span>Illustration</span></button>
+            <button class="category" data-category="3D / Render"><i>◇</i><span>3D / Render</span></button>
+            <button class="category" data-category="Anime"><i>☆</i><span>Anime</span></button>
+            <button class="category" data-category="UI / UX"><i>▤</i><span>UI / UX</span></button>
+          </div>
+        </section>
+
+        <section class="content-section website-section">
+          <div class="section-head"><div><span class="section-kicker">TRENDING NOW</span><h2>Popular Prompts</h2></div><button data-route="explore">See All ›</button></div>
           <div class="prompt-grid" id="popularGrid"></div>
         </section>
 
-        <section class="content-section">
-          <div class="section-head"><h2>Top Creators</h2><button id="creatorSeeAll">See All</button></div>
+        <section class="sell-banner website-sell-banner">
+          <div><span class="section-kicker">FOR CREATORS</span><h1>Create More, Earn More</h1><p>Sell your images together with high-quality prompts to creators worldwide.</p><button class="white-btn" data-route="sell">Upload & Sell</button></div>
+          <div class="cube-art">◇</div>
+        </section>
+
+        <section class="content-section website-section">
+          <div class="section-head"><div><span class="section-kicker">COMMUNITY</span><h2>Top Creators</h2></div><button id="creatorSeeAll">See All</button></div>
           <div class="creator-row" id="creatorRow"></div>
         </section>
 
-        <section class="content-section">
-          <div class="section-head"><h2>New Arrivals</h2><button data-route="explore">See All ›</button></div>
+        <section class="content-section website-section">
+          <div class="section-head"><div><span class="section-kicker">JUST ADDED</span><h2>New Arrivals</h2></div><button data-route="explore">See All ›</button></div>
           <div class="prompt-grid" id="newGrid"></div>
         </section>
       </section>
-
       <section class="page hidden" id="dynamicPage"></section>
     </main>
 
-    <nav class="bottom-nav">
+    <footer class="website-footer"><div><strong>VELORA</strong><span>Image & Prompt Marketplace</span></div><p>Discover • Create • Sell</p></footer>
+
+    <nav class="bottom-nav mobile-bottom-nav">
       <button class="nav active" data-route="home"><i>⌂</i><span>Home</span></button>
       <button class="nav" data-route="explore"><i>⌕</i><span>Explore</span></button>
       <button class="nav upload" data-route="sell"><i>＋</i><span>Upload</span></button>
