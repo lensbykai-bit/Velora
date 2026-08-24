@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0b0712" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>VELORA — Photo & Video Marketplace</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="styles.css" />
@@ -20,7 +22,14 @@
           <div class="tagline">Photo & Video Marketplace</div>
         </div>
       </div>
-      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <div class="header-actions">
+        <button class="icon-btn bell-btn" id="notifyBtn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 17.5h11l-1.4-2.2V10a4.1 4.1 0 0 0-8.2 0v5.3z"/><path d="M10 19.2a2.1 2.1 0 0 0 4 0"/></svg><span class="notif-dot"></span>
+        </button>
+        <button class="icon-btn" id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.3"/><path d="m15.5 15.5 4 4"/></svg>
+        </button>
+      </div>
     </header>
 
     <main id="mainContent">
