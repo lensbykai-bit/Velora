@@ -1,1 +1,76 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050912"><title>VELORA — Prompt & Image Marketplace</title><link rel="icon" href="icon.svg"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="nav.css"><link rel="stylesheet" href="ui-v2.css"><link rel="stylesheet" href="prompt-market.css"></head><body><div class="app-shell prompt-app"><header class="pm-head"><button class="pm-menu">☰</button><div class="pm-brand">VELORA</div><button class="pm-bell" id="notifyBtn">♧<b>3</b></button><button id="searchBtn" hidden></button></header><main id="mainContent"><section class="pm-home"><div class="pm-search" onclick="document.getElementById('searchBtn').click()">⌕ <span>Search prompts, styles, creators...</span></div><div class="pm-cats"><button class="active">✿<small>All</small></button><button>▣<small>Photography</small></button><button>✎<small>Illustration</small></button><button>◇<small>3D / Render</small></button><button>☆<small>Anime</small></button><button>▤<small>UI / UX</small></button></div><div class="pm-banner"><div><h2>Create More, Earn More</h2><p>Sell your prompts & images to creators worldwide.</p><button data-nav="upload">Upload & Sell</button></div><div class="pm-cube">◇</div></div><div class="pm-title"><h2>Popular Prompts</h2><button data-nav="explore">See All ›</button></div><div class="pm-grid" id="trendingGrid"></div><div class="pm-title"><h2>Top Creators</h2><button>See All</button></div><div class="pm-creators" id="creatorRow"></div><div class="pm-title"><h2>New Arrivals</h2><button data-nav="explore">See All ›</button></div><div class="pm-new"><div></div><div></div><div></div></div></section></main><nav class="bottom-nav"><button class="nav-item active" data-nav="home"><span class="nav-icon">⌂</span><small>Home</small></button><button class="nav-item" data-nav="explore"><span class="nav-icon">⌕</span><small>Explore</small></button><button class="nav-item upload-nav" data-nav="upload"><span class="nav-icon upload-icon">＋</span><small>Upload</small></button><button class="nav-item" data-nav="purchases"><span class="nav-icon">♡</span><small>Favorites</small></button><button class="nav-item" data-nav="profile"><span class="nav-icon">♙</span><small>Profile</small></button></nav></div><div class="modal hidden" id="modal"><div class="modal-card" id="modalCard"></div></div><script src="app.js"></script><script src="prompt-market.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#070b12" />
+  <meta name="description" content="VELORA marketplace for buying and selling images with prompts." />
+  <title>VELORA — Image & Prompt Marketplace</title>
+  <link rel="icon" href="icon.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="prompt-market.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <a class="brand" href="#home">VELORA</a>
+      <div class="top-actions">
+        <button class="icon-btn notif-btn" id="notifyBtn" aria-label="Notifications">♧<span>3</span></button>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="page home-page" id="homePage">
+        <button class="search-box" id="searchBtn"><b>⌕</b><span>Search prompts, styles, creators...</span></button>
+
+        <div class="category-strip" id="categoryStrip">
+          <button class="category active" data-category="ALL"><i>✿</i><span>All</span></button>
+          <button class="category" data-category="Photography"><i>▣</i><span>Photography</span></button>
+          <button class="category" data-category="Illustration"><i>✎</i><span>Illustration</span></button>
+          <button class="category" data-category="3D / Render"><i>◇</i><span>3D / Render</span></button>
+          <button class="category" data-category="Anime"><i>☆</i><span>Anime</span></button>
+          <button class="category" data-category="UI / UX"><i>▤</i><span>UI / UX</span></button>
+        </div>
+
+        <section class="sell-banner">
+          <div>
+            <h1>Create More, Earn More</h1>
+            <p>Sell your images together with high-quality prompts to creators worldwide.</p>
+            <button class="white-btn" data-route="sell">Upload & Sell</button>
+          </div>
+          <div class="cube-art">◇</div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-head"><h2>Popular Prompts</h2><button data-route="explore">See All ›</button></div>
+          <div class="prompt-grid" id="popularGrid"></div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-head"><h2>Top Creators</h2><button id="creatorSeeAll">See All</button></div>
+          <div class="creator-row" id="creatorRow"></div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-head"><h2>New Arrivals</h2><button data-route="explore">See All ›</button></div>
+          <div class="prompt-grid" id="newGrid"></div>
+        </section>
+      </section>
+
+      <section class="page hidden" id="dynamicPage"></section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav active" data-route="home"><i>⌂</i><span>Home</span></button>
+      <button class="nav" data-route="explore"><i>⌕</i><span>Explore</span></button>
+      <button class="nav upload" data-route="sell"><i>＋</i><span>Upload</span></button>
+      <button class="nav" data-route="favorites"><i>♡</i><span>Favorites</span></button>
+      <button class="nav" data-route="profile"><i>♙</i><span>Profile</span></button>
+    </nav>
+  </div>
+
+  <div class="sheet hidden" id="sheet"><div class="sheet-card" id="sheetCard"></div></div>
+  <script src="prompt-market.js"></script>
+</body>
+</html>
